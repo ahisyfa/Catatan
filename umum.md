@@ -1,5 +1,5 @@
-#Catatan Umum
-##Mempercantik console.log()
+# Catatan Umum
+## Mempercantik console.log()
 
 Colors reference
 ```
@@ -29,7 +29,7 @@ BgMagenta = "\x1b[45m"
 BgCyan = "\x1b[46m"
 BgWhite = "\x1b[47m"
 ```
-###Contoh Penggunaan
+### Contoh Penggunaan :
 ```
 code console.log('\x1b[36m%s\x1b[0m', 'I am cyan');  //cyan
 ```
