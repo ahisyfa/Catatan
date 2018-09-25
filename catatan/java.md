@@ -33,6 +33,9 @@ mekanisme Exception handling. Kelas `Throwable` memiliki 2 kelas turunan, yaitu 
 ```
 
 ### Checked vs. Unchecked Exceptions
-- Semua exception yang diturunkan kelas `RuntimeException` adalah Unchecked Exception. Terjadi karena cacat yang ada pada kode kita, contoh saat terjadi `ArrayIndexOutOfBoundsException`.
-- Semua exception yang diturunkan kelas `Exception` (kecuali kelas `RuntimeException`) adalah Checked Exception.
-
+- Semua exception yang diturunkan dari kelas `RuntimeException` adalah Unchecked Exception. Terjadi karena cacat yang ada pada kode kita, contoh saat terjadi `ArrayIndexOutOfBoundsException`.
+- Semua exception yang diturunkan dari kelas `Exception` (kecuali kelas `RuntimeException`) adalah Checked Exception.
+- Compiler akan mengecek setiap pemanggilan method untuk menentukan apakah method tersebut melempar / throws 
+`checked exception`. Jika melempar `checked exception`, compiler akan memastikan bahwa exception tersebut ditangkap (dalam blok try-catch statement) atau dilemparkan dan ditangkap oleh method pemanggilnya.
+Jika kondisi ini tidak terpenuhi, maka compiler akan memarahimu (memberikan issue error). 
+Hal ini memaksa kita (eeh gue doang kali ya) untuk memikirkan apa yang akan terjadi saat negara api menyerang, eeh salah, memikirkan apa yang mungkin akan terjadi saat memanggil method yang melemparkan `checkek exception`.
