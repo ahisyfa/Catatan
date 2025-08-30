@@ -138,11 +138,11 @@ func main() {
 ```
 
 ## Mathematical Operation
-- +
-- -
-- *
-- /
-- %
+- `+`
+- `-`
+- `*`
+- `/`
+- `%`
 ### Augmented Assignment
 ```go 
 func main() {
@@ -507,6 +507,87 @@ func checkUserStatus(name string, blacklist Blacklist) {
 		fmt.Println("You are in blacklist!")
 	} else {
 		fmt.Println("Hallo", name, "you are still active.")
+	}
+}
+
+```
+
+## Defer, Panic and Recover
+- Defer function adalah function yang bisa kita jadwalkan untuk dieksekusi setelah sebuah function selesei dieksekusi
+- Defer function akan selalu dieksekusi walaupun terjadi error di function yang dieksekusi
+
+```go
+package main
+
+import "fmt"
+
+func logging() {
+	fmt.Println("End of program")
+	errorMsg := recover()
+	if errorMsg != nil {
+		fmt.Println("Error message: " + errorMsg.(string))
+	}
+}
+
+func runLogic(error bool) {
+	defer logging()
+	if error {
+		panic("Upps, I hate it!")
+	}
+
+	fmt.Println("I do something here..")
+}
+
+func main() {
+	runLogic(false)
+	runLogic(true)
+}
+
+```
+
+## Custom Error
+```go
+package main
+
+import "fmt"
+
+type validationerror struct {
+	Message string
+}
+
+func (v *validationerror) Error() string {
+	return v.Message
+}
+
+type datanotfounderror struct {
+	Message string
+}
+
+func (d *datanotfounderror) Error() string {
+	return d.Message
+}
+
+func SaveData(id string, data any) error {
+	if id == "" {
+		return &validationerror{Message: "ID is empty or nil"}
+	}
+
+	if data != "Amin" {
+		return &datanotfounderror{Message: "Data not found"}
+	}
+
+	return nil
+}
+
+func main() {
+	err := SaveData("A", nil)
+
+	if err != nil {
+		if validationerror, ok := err.(*validationerror); ok {
+			fmt.Println("validation error:", validationerror.Message)
+		} else if datanotfounderror, ok := err.(*datanotfounderror); ok {
+			fmt.Println("data not found error:", datanotfounderror.Message)
+		}
 	}
 }
 
