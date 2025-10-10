@@ -386,6 +386,52 @@ func main() {
 
 ```
 
+## time
+[time Documentation](https://pkg.go.dev/time)
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	// Get current time
+	now := time.Now()
+	fmt.Println("Current Time:", now)
+	fmt.Println("Current Time in Local:", now.Local())
+
+	var utcTime time.Time = time.Date(2023, time.September, 5, 14, 30, 0, 0, time.UTC)
+	fmt.Println("UTC Time:", utcTime)
+	fmt.Println("UTC Time in Local:", utcTime.Local())
+
+	// Format time
+	formattedTime := now.Format("2006-01-02 15:04:05")
+	fmt.Println("Formatted Time:", formattedTime)
+
+	// Duration
+	var duration1 time.Duration = 10 * time.Millisecond
+	var duration2 time.Duration = 5 * time.Second
+	totalDuration := duration1 + duration2
+
+	fmt.Println("Total Duration:", totalDuration)
+	fmt.Printf("Total Duration: %d\n", totalDuration)
+}
+
+/**
+Output:
+Current Time: 2025-09-09 22:18:23.445324261 +0700 WIB m=+0.000014471
+Current Time in Local: 2025-09-09 22:18:23.445324261 +0700 WIB
+UTC Time: 2023-09-05 14:30:00 +0000 UTC
+UTC Time in Local: 2023-09-05 21:30:00 +0700 WIB
+Formatted Time: 2025-09-09 22:18:23
+Total Duration: 5.01s
+Total Duration: 5010000000
+*/
+
+```
+
 
 
 

@@ -9,3 +9,13 @@ Repository ini adalah catatan saya selama belajar Computer Science khususnya pem
 5. [Golang - Fundamental](catatan/golang.md) : Golang Fundamental
 6. [Golang - Standard Library](catatan/golang-standard-library.md) : Golang Standard Library
 7. [Docker - Basic](catatan/docker.md) : Docker Fundamental
+
+
+## Linux Universe
+1. [Install Gnome Extensions](catatan/Install_Gnome_Extensions.md)
+2. 
+
+## EBook 
+1. [The Linux Command Line](ebook/TLCL-24.11.pdf) 
+2. [Pengenalan SLM RAG](ebook/pengenalan_slm_rag_onowpurbo.pdf)
+3. 
