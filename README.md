@@ -13,7 +13,7 @@ Repository ini adalah catatan saya selama belajar Computer Science khususnya pem
 
 ## Linux Universe
 1. [Install Gnome Extensions](catatan/Install_Gnome_Extensions.md)
-2. 
+2. [Linux Command Line Pipes and Redirection](catatan/linux/pipe-and-redirection.md)
 
 ## EBook 
 1. [The Linux Command Line](ebook/TLCL-24.11.pdf) 
