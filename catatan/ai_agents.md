@@ -5,7 +5,7 @@ Build the skills you’ll need to create autonomous systems, from designing basi
 ## Level 1 - Exploring
 AI Agents and their Core Components
 Define an AI agent and identify its core components (e.g., reasoning engine, tools, memory).
-
+```
  ┌───────────────────────────────────────┐
  │      Characteristics of AI Agents     │
  │                                       │
@@ -31,7 +31,7 @@ Define an AI agent and identify its core components (e.g., reasoning engine, too
       │          │ Memory  │          │   
       │          └─────────┘          │   
       └───────────────────────────────┘   
-
+```
 
 ### Characteristics of AI Agents
 What Are AI Agent?
