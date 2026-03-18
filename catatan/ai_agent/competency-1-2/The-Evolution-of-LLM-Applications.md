@@ -63,10 +63,71 @@ It is known to :
 |Iteration        | No                    | No           | Adaptive loops|
 |Complexity       | Low                   | Medium       | High          |
 
+## When to Use Each Approach
+- Use prompt engineering when
+   - Task is simple and well defines
+   - Single LLM call is sufficient
+   - No external data needed
+- Use prompt chaining when
+   - Task requires multiple steps
+   - Steps are predictable and fixed
+   - Need to combined retrieval with generation
+- Use AI Agent when
+   - Task complexity require dynamic decision-making with unkonwn number of step needed
+   - Multiple tools or API must be orchestrated
 
+## Common Pitfall: Jumping Straight to Agent
+A common mistake is to build autonomous agent when a simple chain would work.   
+Agen add latency, cost, and unpredictability.   
+Ask yourself: "Do I actually need LLM to make decision, or do I just need multiple steps?" If the steps are known upfronts, use a cain.   
 
+> Don't add complexity you don't need, and you'll save on both time and money.
+
+## Example: Content Writing
+A. Prompt Chaining
+```
+                                ┌────────┐      ┌─────────┐     ┌──────┐     ┌────────┐
+"Generate an outline            │        │      │ ......  │     │      │     │ ...... │
+ of a blog post         ───────►│  LLM   ├─────►│ ......  ├────►│ LLM  ├────►│ ...... │
+ about machine learning"        │        │      │ ......  │     │      │     │ ...... │
+                                └────────┘      └─────────┘     └──────┘     └────────┘
+                                                  Outline           ▲         Finished 
+   (Input Prompt 1)                                                 │         Blog Post
+                              "Based on this                        │                  
+                               outline, write                       │                  
+                               a blog post about ───────────────────┘                  
+                               machine learning"                                       
+                                                                                       
+                               (Input Prompt 2)                                        
+```
+
+B. AI Agent
+```
+                                                                                               
+                                                                                               
+                                         Create an outline                                     
+                                                 │ │                                           
+                                                 │ │                                           
+                       Research the topic        │ │      Draft each section                   
+                                     │ │         │ │         │ │                               
+                                     │ │         │ │         │ │                               
+                                     │ ▼         │ ▼         │ ▼                               
+                                   ┌─┴───────────┴───────────┴───┐                  ┌────────┐ 
+    "Write a blog post             │                             │                  │ ...... │ 
+  about machine learning" ───────► │                             │                  │ ...... │ 
+                                   │          L L M              ├─────────────────►│ ...... │ 
+         (Input)                   │                             │                  │ ...... │ 
+                                   │                             │                  │ ...... │ 
+                                   └─────┬───────────────────┬───┘                  └────────┘ 
+                                         │ ▲                 │ ▲                     Finished  
+                                         │ │                 │ │                    Blog Post  
+                            Refine weak section            Add examples                        
+                                                                                               
+```
 
 ## Quiz
 1. What key capability distinguishes chain-of-thought prompting within prompt engineering from prompt chaining?
+> A technique within prompt engineering that induces step-by-step reasoning from the model
 
 2. Chain-of-thought prompting is best described as:
+>
