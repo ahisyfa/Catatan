@@ -20,3 +20,7 @@ Repository ini adalah catatan saya selama belajar Computer Science khususnya pem
 1. [The Linux Command Line](ebook/TLCL-24.11.pdf) 
 2. [Pengenalan SLM RAG](ebook/pengenalan_slm_rag_onowpurbo.pdf)
 3. 
+
+
+## AI 
+1. [AI Agent](catatan/ai_agent/ai_agents.md)
