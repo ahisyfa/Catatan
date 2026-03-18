@@ -10,7 +10,7 @@ Define an AI agent and identify its core components (e.g., reasoning engine, too
 
 ### Competency 1.2 - Prompt Engineering, Context Engineering, and AI Agents
 Distinguish between prompt engineering, prompt chaining, context engineering, and AI agents.
-- [The Evolution of LLM Applications](/catatan/ai_agent/competency-1-1/The-Evolution-of-LLM-Applications.md)
+- [The Evolution of LLM Applications](/catatan/ai_agent/competency-1-2/The-Evolution-of-LLM-Applications.md)
 
 
 ## Level 2 - Applying
