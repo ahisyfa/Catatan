@@ -1,4 +1,4 @@
-# Reduce the size of existing virtual disks
+# Reduce the size of existing Qemu virtual disks
 #qemu #vm #disk
 
 Step
